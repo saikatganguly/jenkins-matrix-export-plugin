@@ -1,1 +1,1 @@
-# jenkins-matrix-export
+# jenkins-matrix-exporter

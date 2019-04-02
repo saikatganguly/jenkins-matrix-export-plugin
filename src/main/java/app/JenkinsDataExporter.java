@@ -15,9 +15,10 @@ public class JenkinsDataExporter {
 
     public static void exportJenkinsData(List<File> buildsDirectory){
         buildsDirectory.parallelStream().forEach(dir->{
-            executor.submit(new LogScraper(dir));
-            executor.submit(new XMLScraper(dir));
-
+            if(dir.isDirectory()) {
+                executor.submit(new LogScraper(dir));
+                executor.submit(new XMLScraper(dir));
+            }
         });
         executor.shutdown();
     }

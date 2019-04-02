@@ -23,7 +23,6 @@ public class LogScraper implements Runnable {
         try{
             File logFile = new File(dirToScrapForLog.getAbsolutePath()+"/log");
             String content = FileUtils.readFileToString(logFile);
-            System.out.println("Logs : "+ content);
             KafkaSender.sendlogs(content);
         }
         catch(IOException ex){

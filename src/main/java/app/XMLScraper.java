@@ -23,7 +23,6 @@ public class XMLScraper implements Runnable {
         try {
             File buildXMl=new File(dirToScrapForXml.getAbsolutePath()+"/build.xml");
             String content = FileUtils.readFileToString(buildXMl);
-            System.out.println(content);
             KafkaSender.sendXml(content);
         } catch (IOException e) {
             e.printStackTrace();

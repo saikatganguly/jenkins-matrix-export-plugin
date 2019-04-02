@@ -17,7 +17,9 @@ public class JenkinsDataExporter {
         buildsDirectory.parallelStream().forEach(dir->{
             executor.submit(new LogScraper(dir));
             executor.submit(new XMLScraper(dir));
+
         });
+        executor.shutdown();
     }
 
 }

@@ -12,6 +12,7 @@ import java.util.*;
 public class Application {
 
     public static void main(String[] args) {
+        System.out.println("Running Jenkins Exporter");
         String jenkinsHome= "/home/jenkins_home/";
         File jobsDirectory = new File(jenkinsHome+"jobs");
         FileFilter filter =new AgeFileFilter(yesterday(), false);

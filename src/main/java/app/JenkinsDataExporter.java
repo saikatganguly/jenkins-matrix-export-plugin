@@ -14,6 +14,7 @@ public class JenkinsDataExporter {
     private static ExecutorService executor= Executors.newFixedThreadPool(10);
 
     public static void exportJenkinsData(List<File> buildsDirectory){
+
         buildsDirectory.parallelStream().forEach(dir->{
             if(dir.isDirectory()) {
                 executor.submit(new LogScraper(dir));

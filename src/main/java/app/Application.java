@@ -1,9 +1,6 @@
 package app;
 
 import org.apache.commons.io.filefilter.AgeFileFilter;
-import org.apache.commons.io.filefilter.AndFileFilter;
-import org.apache.commons.io.filefilter.EmptyFileFilter;
-import org.apache.commons.io.filefilter.TrueFileFilter;
 
 import java.io.*;
 import java.util.*;
@@ -15,8 +12,8 @@ public class Application {
 
     public static void main(String[] args) throws IOException {
         System.out.println("Running Jenkins Exporter");
-        String jenkinsHome= System.getenv("JENKINS_HOME");
-       //String jenkinsHome = "/home/jenkins_home";
+        //String jenkinsHome= System.getenv("JENKINS_HOME");
+       String jenkinsHome = "/home/jenkins_home";
         if(jenkinsHome!=null && !"".equals(jenkinsHome.trim())) {
             System.out.println("Exporting from jenkins home : "+jenkinsHome);
             Properties properties = new Properties();
